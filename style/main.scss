@@ -1,0 +1,222 @@
+// variables here
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Quicksand&display=swap');
+
+$mainFont: 'oswald',
+sans-serif;
+$font: 'quicksand',
+sans-serif;
+
+// colors 
+
+$mainColor: #3C038C;
+$nth-color: #44E1F2;
+$light: #fff;
+$dark: #202040;
+$lightGray: #f4f4f4;
+
+// break points
+
+$tablet: 820px;
+$mobile: 480px;
+$miniScreen: 360px;
+
+// reset
+
+html,
+body,
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: $font;
+}
+
+a {
+    text-decoration: none;
+}
+
+// end of variables 
+
+// navbar
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 4%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: .3s cubic-bezier(1, 2, 0.3, 1);
+    z-index: 1000;
+
+    // brand 
+    .brand a {
+        font-size: 2rem;
+        font-family: $mainFont;
+        color: $light;
+    }
+
+    // menu
+    .menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .main-links {
+            @extend .menu;
+        }
+
+        .account-login {
+            @extend .main-links;
+
+            .g-started {
+                background-color: $mainColor;
+                border-radius: 4px;
+                font-weight: bold;
+                transition: .3s linear;
+                margin-left: 10px;
+
+                &:hover {
+                    transform: translateY(-4px);
+                }
+            }
+        }
+
+        a {
+            padding: 10px 20px;
+            background-color: transparent;
+            color: $light;
+            transition: .3s linear;
+            border-radius: 4px;
+
+            &:hover {
+                background-color: transparentize($light, .8);
+            }
+        }
+
+        .break {
+            height: 20px;
+            width: 2px;
+            margin: 0 10px;
+            background-color: $light;
+        }
+    }
+
+    // media querie
+    @media only screena and (max-width: $tablet) {
+        display: none;
+    }
+}
+
+// hero section
+.hero {
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background: transparent;
+    display: grid;
+    align-content: center;
+
+    // hero content
+    .hero-content {
+        padding: 4%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        .subtitle,
+        .title {
+            color: $light;
+        }
+
+        .subtitle {
+            color: $mainColor;
+            background-color: $light;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            margin-bottom: 10px;
+
+            h1 {
+                font-family: $mainFont;
+                font-size: 3rem;
+            }
+        }
+
+        // cta
+        .callToAction {
+            .cta {
+                background-color: transparent;
+                border: 2px solid $light;
+                color: $light;
+                padding: 10px 35px;
+                border-radius: 4px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: .2s ease-in-out;
+
+                &:hover {
+                    background-color: $light;
+                    color: $mainColor;
+                }
+            }
+        }
+
+        // media queries
+        @media only screen and (max-width: $tablet) {
+            width: 60%;
+
+            .title {
+                h1 {
+                    font-size: 1.7rem;
+                }
+            }
+        }
+    }
+}
+
+// add this to navbar on scroll
+.fixed {
+    background-color: $light;
+    padding: 10px 4%;
+
+    .brand {
+        a {
+            color: $mainColor;
+        }
+    }
+
+    .break {
+        background-color: $mainColor !important;
+    }
+
+    .menu {
+        a {
+            color: $mainColor !important;
+
+            &:hover {
+                background-color: transparentize($mainColor, .9);
+            }
+        }
+
+        .g-started {
+            color: $light !important;
+        }
+    }
+}
+
+
+
+.test {
+    padding: 4%;
+}
