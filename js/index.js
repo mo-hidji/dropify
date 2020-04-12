@@ -21,8 +21,3 @@ function mainHeader() {
         document.getElementById("mobileHeaderX").className = "mobile-header";
     }
 };
-    $(function () {
-        $('.hero').parallax({
-            imageSrc: 'assets/bg-main.jpg'
-        });
-    });

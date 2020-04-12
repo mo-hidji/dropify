@@ -106,18 +106,45 @@ a {
         }
     }
 
+    // toggler
+    .toggler {
+        margin-left: 20px;
+
+        button.t-btn {
+            background-color: transparent;
+            border: none;
+
+            .fas {
+                font-size: 2rem;
+                color: $light;
+            }
+        }
+    }
+
     // media querie
-    @media only screena and (max-width: $tablet) {
-        display: none;
+    @media only screen and (max-width: $tablet) {
+        .menu {
+            display: none;
+            opacity: 0;
+        }
+
+        .toggler {
+            display: block;
+        }
+    }
+    @media only screen and (min-width: $tablet) {
+        .toggler {
+            display: none;
+        }
     }
 }
 
 // hero section
 .hero {
     height: 100vh;
+    background-image: url('../assets/bg-main.jpg');
     background-position: center;
     background-size: cover;
-    background: transparent;
     display: grid;
     align-content: center;
 
@@ -214,8 +241,6 @@ a {
         }
     }
 }
-
-
 
 .test {
     padding: 4%;
